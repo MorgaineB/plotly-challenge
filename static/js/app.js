@@ -42,4 +42,9 @@ function init() {
     });
 }
 
+//Build a function for when there is a change in the dropdown menu
+function optionChanged(newSample) {
+    buildDemographics(newSample);
+}
+
 init();
