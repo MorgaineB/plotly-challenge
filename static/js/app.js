@@ -22,7 +22,13 @@ function buildCharts(sample) {
     d3.json("samples.json").then((data) => {
         var samples = data.samples;
         var sampleData = samples.filter(sampleobject => sampleobject.id == sample)[0];
-        console.log(sampleData);
+        // console.log(sampleData);
+
+        var ids = sampleData.otu_ids;
+        var values = sampleData.sample_values;
+        var labels = sampleData.otu_labels;
+
+        
     })
 }
 
