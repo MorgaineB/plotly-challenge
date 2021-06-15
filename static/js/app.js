@@ -48,7 +48,7 @@ function buildCharts(sample) {
 
         //Build Bubble chart
 
-        var bubbledata = [
+        var bubbleData = [
             {
                 x: ids,
                 y: values,
@@ -66,6 +66,8 @@ function buildCharts(sample) {
             title: "Bacteria Cultures Per Sample",
             xaxis: { title: "OTU ID"}
         };
+
+        Plotly.newPlot("bubble", bubbleData, bubbleLayout);
 
     });
 }
