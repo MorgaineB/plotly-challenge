@@ -38,7 +38,13 @@ function buildCharts(sample) {
             }
         ];
 
-    })
+        var barLayout = {
+            title: "Top 10 Bacteria Cultures Found",
+        };
+
+        Plotly.newPlot("bar", barData, barLayout);
+
+    });
 }
 
 
