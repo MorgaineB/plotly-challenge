@@ -9,14 +9,18 @@ function init() {
     d3.json("samples.json").then(function(data) {
         // console.log(data);
         // Get the IDs for the samples for the drop down menu
-        var names = data.names;
+        var numbers = data.names;
         // console.log(names);
-        names.forEach((name) => {
+        numbers.forEach((number) => {
             selector
                 .append("option")
-                .text(name)
-                .property("value", name);
+                .text(number)
+                .property("value", number);
         });
+
+        //get the first sample number in the list and build charts for that sample
+        const firstSampleNumber = numbers[0];
+        console.log(firstSampleNumber);
 
     });
 }
