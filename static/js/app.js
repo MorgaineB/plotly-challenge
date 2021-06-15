@@ -28,6 +28,8 @@ function buildCharts(sample) {
         var values = sampleData.sample_values;
         var labels = sampleData.otu_labels;
 
+        //Build Bar Chart 
+
         var barData = [
             {
                 x: values.slice(0, 10).reverse(),
@@ -43,6 +45,27 @@ function buildCharts(sample) {
         };
 
         Plotly.newPlot("bar", barData, barLayout);
+
+        //Build Bubble chart
+
+        var bubbledata = [
+            {
+                x: ids,
+                y: values,
+                text: labels,
+                mode: "markers",
+                marker: {
+                    color: ids,
+                    size: values,
+                }
+
+            }
+        ];
+
+        var bubbleLayout = {
+            title: "Bacteria Cultures Per Sample",
+            xaxis: { title: "OTU ID"}
+        };
 
     });
 }
