@@ -17,6 +17,15 @@ function buildDemographics(sample) {
     });
 }
 
+//Build the charts for each sample
+function buildCharts(sample) {
+    d3.json("samples.json").then((data) => {
+        var samples = data.samples;
+        var sampleData = samples.filter(sampleobject => sampleobject.id == sample)[0];
+        console.log(sampleData);
+    })
+}
+
 
 
 //Create an init function to populate the page on load & the drop down menu.
@@ -38,6 +47,7 @@ function init() {
         // console.log(firstSampleNumber);
         //pull info & build plots for the first sample using functions from above.
         buildDemographics(firstSampleNumber);
+        buildCharts(firstSampleNumber);
 
     });
 }
