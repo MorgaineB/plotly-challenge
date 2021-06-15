@@ -28,9 +28,19 @@ function buildCharts(sample) {
         var values = sampleData.sample_values;
         var labels = sampleData.otu_labels;
 
-        
+        var barData = [
+            {
+                x: values.slice(0, 10).reverse(),
+                y: ids.slice(0, 10).map(otuID => `OTU ${otuID}`).reverse(),
+                text: labels.slice(0, 10).reverse(),
+                type: "bar",
+                orientation: "h"
+            }
+        ];
+
     })
 }
+
 
 
 
