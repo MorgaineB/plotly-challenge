@@ -32,6 +32,8 @@ function buildCharts(sample) {
 
         //Build Bar Chart 
 
+        //Set values for bar chart data & define bar chart
+
         var barData = [
             {
                 x: values.slice(0, 10).reverse(),
@@ -46,9 +48,13 @@ function buildCharts(sample) {
             title: "Top 10 Bacteria Cultures Found",
         };
 
+        //Plot bar chart
+
         Plotly.newPlot("bar", barData, barLayout);
 
         //Build Bubble chart
+
+        //Set values for bubble chart data & layout
 
         var bubbleData = [
             {
@@ -68,6 +74,8 @@ function buildCharts(sample) {
             title: "Bacteria Cultures Per Sample",
             xaxis: { title: "OTU ID"}
         };
+
+        // plot bubble chart
 
         Plotly.newPlot("bubble", bubbleData, bubbleLayout);
 
