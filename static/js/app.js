@@ -24,6 +24,8 @@ function buildCharts(sample) {
         var sampleData = samples.filter(sampleobject => sampleobject.id == sample)[0];
         // console.log(sampleData);
 
+        //set variables for the charts
+
         var ids = sampleData.otu_ids;
         var values = sampleData.sample_values;
         var labels = sampleData.otu_labels;
